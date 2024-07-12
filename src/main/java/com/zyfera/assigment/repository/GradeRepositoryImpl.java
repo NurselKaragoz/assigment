@@ -11,6 +11,7 @@ public class GradeRepositoryImpl implements GradeRepository{
 
     EntityManager entityManager;
 
+    // All methods implemented and refactor for return objects
 
     @Autowired
 

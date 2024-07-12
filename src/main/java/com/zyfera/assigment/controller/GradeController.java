@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GradeController {
     GradeRepository gradeRepository;
-
-
   @Autowired
     public GradeController(GradeRepository gradeRepository) {
         this.gradeRepository = gradeRepository;

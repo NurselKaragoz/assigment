@@ -22,9 +22,11 @@ public class Student {
     private String name;
     @Column(name="surname")
     private String surname;
+
+    // Student number can not change due to final
     @Column(name="stdNumber")
     private final String stdNumber;
-
+   //Relations grade class
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Grade> grades = new ArrayList<>();
 }

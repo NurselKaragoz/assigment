@@ -11,6 +11,8 @@ public class StudentRepositoryImpl implements StudentRepository{
 
     EntityManager entityManager;
 
+    // All methods implemented and refactor for return objects
+
     @Autowired
 
     public StudentRepositoryImpl(EntityManager entityManager) {
