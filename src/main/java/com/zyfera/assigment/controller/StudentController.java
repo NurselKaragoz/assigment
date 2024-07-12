@@ -2,6 +2,7 @@ package com.zyfera.assigment.controller;
 
 import com.zyfera.assigment.entity.Student;
 import com.zyfera.assigment.repository.StudentRepository;
+import com.zyfera.assigment.validation.StudentValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -24,6 +25,7 @@ public StudentController(StudentRepository studentRepository){
 
 @PostMapping("/student")
 public Student save(@RequestBody Student student){
+    StudentValidation.checkName(student.getName());
     return studentRepository.save(student);
 
 }

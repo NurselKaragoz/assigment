@@ -2,6 +2,8 @@ package com.zyfera.assigment.controller;
 
 import com.zyfera.assigment.entity.Grade;
 import com.zyfera.assigment.repository.GradeRepository;
+import com.zyfera.assigment.validation.GradeValidation;
+import com.zyfera.assigment.validation.StudentValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,6 +23,7 @@ public class GradeController {
     // Endpoint for created operation
     @PostMapping("/student/grade")
     public Grade save(@RequestBody Grade grade){
+      GradeValidation.checkCode(grade.getCode());
       return gradeRepository.save(grade);
 
     }
