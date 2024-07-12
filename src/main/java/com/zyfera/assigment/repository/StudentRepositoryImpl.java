@@ -3,8 +3,10 @@ package com.zyfera.assigment.repository;
 import com.zyfera.assigment.entity.Student;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+@Repository
 public class StudentRepositoryImpl implements StudentRepository{
 
     EntityManager entityManager;
@@ -18,11 +20,13 @@ public class StudentRepositoryImpl implements StudentRepository{
     @Transactional
     @Override
     public Student save(Student student) {
-        return null;
+         entityManager.persist(student);
+        return student;
     }
     @Transactional
     @Override
     public Student update(Student student) {
-        return null;
+        entityManager.merge(student);
+        return student;
     }
 }
